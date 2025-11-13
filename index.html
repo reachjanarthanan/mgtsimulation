@@ -4,44 +4,140 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MGTSIM — Management Simulations</title>
+  <meta name="description" content="Immersive, research-backed management simulations for business education." />
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <img src="./assets/img/logo.png" class="logo">
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="simulations.html">Simulations</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="hero container">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <h1>Transform Learning Through Management Simulations</h1>
-      <p>Immersive, practical, and research-backed simulations for business education.</p>
-      <a class="btn btn-primary" href="simulations.html">Explore Simulations</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">MGTSIM</div>
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="simulations.html" class="nav-link">Simulations</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a class="btn btn-primary" href="#request-demo" onclick="document.getElementById('request-demo').scrollIntoView({behavior:'smooth'})">Request Demo</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
-    <div class="hero-media">
-      <img src="./assets/img/logo.png" style="max-width:260px;opacity:0.8">
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Transform Learning Through Management Simulations</h1>
+          <p>Immersive, practical, and research-backed simulations for business education and corporate training.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="simulations.html">Explore Simulations</a>
+            <a class="btn btn-outline" href="#request-demo" id="request-demo">Request Demo</a>
+          </div>
+          <ul class="trust-list">
+            <li>Trusted by universities & corporations</li>
+            <li>Research-backed scenarios</li>
+            <li>Instructor dashboard & reporting</li>
+          </ul>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <!-- simple SVG mockup as placeholder -->
+          <svg width="560" height="350" viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Simulation preview">
+            <rect width="560" height="350" rx="12" fill="#eef6ff"/>
+            <rect x="24" y="28" width="220" height="28" rx="6" fill="#d9eefc"/>
+            <rect x="24" y="68" width="500" height="20" rx="4" fill="#ffffff"/>
+            <rect x="24" y="100" width="500" height="12" rx="4" fill="#ffffff"/>
+            <rect x="24" y="130" width="260" height="26" rx="6" fill="#d9eefc"/>
+            <rect x="24" y="170" width="500" height="110" rx="6" fill="#fff"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <h2>Why MGTSIM?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Real-world scenarios</h3>
+          <p>Scenarios built from academic research and industry practice — designed for skills transfer.</p>
+        </div>
+        <div class="card">
+          <h3>Instructor tools</h3>
+          <p>Monitor student choices, export results, and run cohort analyses from a simple dashboard.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud-delivered</h3>
+          <p>Host on GitHub Pages or Netlify, integrate with Supabase for persistence and Stripe for payments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="simulations-preview container" id="simulations">
+      <h2>Featured Simulations</h2>
+      <div class="sim-grid">
+        <article class="sim-card">
+          <h4>Marketing Strategy Simulation</h4>
+          <p>Decide segmentation, pricing and campaign mix in a competitive market.</p>
+          <a class="btn btn-secondary" href="https://reachjanarthanan.github.io/mgt-sims-simulation/">Launch</a>
+        </article>
+        <article class="sim-card">
+          <h4>Decision-Making Simulation</h4>
+          <p>Explore AI-assisted vs human decisions across realistic scenarios.</p>
+          <a class="btn btn-secondary" href="#">Details</a>
+        </article>
+        <article class="sim-card">
+          <h4>Business Analytics Simulation</h4>
+          <p>Work with datasets, dashboards and KPIs to improve firm performance.</p>
+          <a class="btn btn-secondary" href="#">Details</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="clients container">
+      <h2>Trusted by</h2>
+      <div class="clients-row">
+        <div class="client">University A</div>
+        <div class="client">Business School B</div>
+        <div class="client">Corporation C</div>
+        <div class="client">Institute D</div>
+      </div>
+    </section>
+
+    <section class="cta container" id="request-demo">
+      <div class="cta-inner">
+        <div>
+          <h2>Request a demo</h2>
+          <p>We offer instructor walkthroughs and trial access for faculty and corporate trainers.</p>
+        </div>
+        <div class="cta-form">
+          <form action="https://formspree.io/f/mayvqkng" method="POST">
+            <label>Full name<input type="text" name="name" required></label>
+            <label>Email<input type="email" name="email" required></label>
+            <label>Institution / Company<input type="text" name="org"></label>
+            <label>Message<textarea name="message"></textarea></label>
+            <button class="btn btn-primary" type="submit">Request Demo</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand">MGTSIM</div>
+        <p>Management simulations for higher education and corporate training.</p>
+      </div>
+      <div class="footer-right">
+        <nav>
+          <a href="simulations.html">Simulations</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="copyright">© 2025 MGTSIM</p>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="container">
-  <h2>Featured Simulation</h2>
-  <div class="sim-card">
-    <h3>Marketing Strategy Simulation</h3>
-    <p>Interactive multi-round simulation on segmentation, pricing, campaigns & performance.</p>
-    <a class="btn btn-secondary" href="https://reachjanarthanan.github.io/mgt-sims-simulation/" target="_blank">Launch Simulation</a>
-  </div>
-</section>
-</main>
-
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
