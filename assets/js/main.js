@@ -1,1 +1,1 @@
-// placeholder main.js
+// main script placeholder
