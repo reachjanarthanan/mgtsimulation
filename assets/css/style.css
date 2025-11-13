@@ -63,8 +63,4 @@ body{font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;margin:0;color:#
   .header-inner{gap:10px}
 }
 
-/* Logo size */
-.logo {
-  height: 60px;
-  width: auto;
-}
+.logo { height:40px !important; width:auto; vertical-align:middle; }
