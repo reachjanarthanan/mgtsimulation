@@ -1,6 +1,6 @@
-// site.js — interactions for the landing site (Option C theme)
+// site.js — interactions for the homepage inspired design
 
-// Smooth scroll nav links
+// Smooth scroll
 document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
   a.addEventListener('click', function(e){
     e.preventDefault();
@@ -10,11 +10,11 @@ document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
   });
 });
 
-// Contact form behavior
+// Contact form (EmailJS optional)
 const CF = {
-  serviceId: 'YOUR_EMAILJS_SERVICE_ID',     // Optional: replace with EmailJS service id
-  templateId: 'YOUR_EMAILJS_TEMPLATE_ID',   // Optional: replace with EmailJS template id
-  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'      // Optional: replace with EmailJS public key
+  serviceId: 'YOUR_EMAILJS_SERVICE_ID',     // optional
+  templateId: 'YOUR_EMAILJS_TEMPLATE_ID',   // optional
+  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'      // optional
 };
 
 const statusEl = document.getElementById('cf_status');
@@ -25,21 +25,17 @@ document.getElementById('cf_send').addEventListener('click', async () => {
   const message = document.getElementById('cf_message').value.trim();
 
   if(!name || !email || !mobile || !message){
-    statusEl.textContent = 'Please fill all fields (mobile is required).';
+    statusEl.textContent = 'Please fill all fields.';
     return;
   }
-
   statusEl.textContent = 'Sending...';
 
-  // If EmailJS not configured, fallback to mailto
   if(!CF.serviceId || CF.serviceId === 'YOUR_EMAILJS_SERVICE_ID'){
-    const mailto = `mailto:reachjanarthanan@gmail.com?subject=Contact: ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: "+name+"\nEmail: "+email+"\nMobile: "+mobile+"\n\nMessage:\n"+message)}`;
+    const mailto = `mailto:reachjanarthanan@gmail.com?subject=Contact: ${encodeURIComponent(name)}&body=${encodeURIComponent("Name:"+name+"\nEmail:"+email+"\nMobile:"+mobile+"\n\n"+message)}`;
     window.location.href = mailto;
-    statusEl.textContent = 'Opening email client...';
     return;
   }
 
-  // load EmailJS library if needed
   try {
     if(!window.emailjs){
       await new Promise((resolve, reject) => {
@@ -50,25 +46,14 @@ document.getElementById('cf_send').addEventListener('click', async () => {
       });
       window.emailjs.init(CF.publicKey);
     }
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      from_mobile: mobile,
-      message
-    };
-
-    await emailjs.send(CF.serviceId, CF.templateId, templateParams);
+    const tpl = { from_name: name, from_email: email, from_mobile: mobile, message };
+    await emailjs.send(CF.serviceId, CF.templateId, tpl);
     statusEl.textContent = 'Message sent — we will reply soon!';
-    // clear form
-    document.getElementById('cf_name').value='';
-    document.getElementById('cf_email').value='';
-    document.getElementById('cf_mobile').value='';
-    document.getElementById('cf_message').value='';
-  } catch (err) {
+    document.getElementById('cf_name').value=''; document.getElementById('cf_email').value=''; document.getElementById('cf_mobile').value=''; document.getElementById('cf_message').value='';
+  } catch(err){
     console.error(err);
-    statusEl.textContent = 'Send failed — opening email client as fallback.';
-    const mailto = `mailto:reachjanarthanan@gmail.com?subject=Contact: ${encodeURIComponent(name)}&body=${encodeURIComponent("Name: "+name+"\nEmail: "+email+"\nMobile: "+mobile+"\n\nMessage:\n"+message)}`;
+    statusEl.textContent = 'Send failed — fallback to email client.';
+    const mailto = `mailto:reachjanarthanan@gmail.com?subject=Contact: ${encodeURIComponent(name)}&body=${encodeURIComponent("Name:"+name+"\nEmail:"+email+"\nMobile:"+mobile+"\n\n"+message)}`;
     window.location.href = mailto;
   }
 });
