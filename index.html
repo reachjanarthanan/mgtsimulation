@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MGT SIMS — Simulations for Management Education</title>
+  <title>MGT SIMS — Management Simulations & Training</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Basic styling (Option C: Soft Educational theme) -->
   <style>
     :root{
       --purple-600:#5b3df0;
@@ -16,61 +15,74 @@
       --muted:#6b6f76;
       --bg:#f6f7fb;
       --card:#ffffff;
-      --radius:12px;
-      --maxw:1100px;
+      --radius:14px;
+      --maxw:1200px;
     }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Arial;margin:0;background:var(--bg);color:#222}
-    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
-    header{display:flex;align-items:center;gap:18px;padding:6px 12px}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;margin:0;background:var(--bg);color:#222;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:20px auto;padding:18px}
+    header{display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:56px}
     .brand h1{font-size:18px;margin:0;color:var(--purple-600)}
     nav{margin-left:auto;display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
-    nav a:hover{background:transparent}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
     nav a.cta{background:var(--purple-600);color:#fff}
+    /* hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:18px}
-    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(30,30,80,0.04)}
+    .hero-card{background:var(--card);padding:34px;border-radius:18px;box-shadow:0 12px 40px rgba(20,20,60,0.06)}
+    .hero h2{color:var(--purple-600);margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin-top:12px}
+    .hero .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--purple-600);color:#fff;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;color:var(--purple-600);border:1px solid rgba(91,61,240,0.12)}
+    .metrics{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    .metric{background:linear-gradient(180deg,rgba(91,61,240,0.06),transparent);padding:10px 12px;border-radius:10px;font-weight:700;color:var(--purple-600)}
+    /* features */
+    .section{margin-top:34px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(20,20,60,0.04)}
     .muted{color:var(--muted)}
-    .btn{background:var(--purple-600);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
-    .btn.ghost{background:transparent;color:var(--purple-600);border:1px solid var(--purple-400)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-    .section{margin-top:28px}
-    .two-col{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    table.pricing{width:100%;border-collapse:collapse}
-    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .price-card{background:var(--card);padding:20px;border-radius:12px;border:1px solid rgba(107,76,255,0.06)}
+    /* simulations list */
+    .sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .sim-card{padding:18px;border-radius:12px;background:var(--card);border:1px solid rgba(91,61,240,0.04)}
+    /* testimonials */
+    .testimonial{background:linear-gradient(180deg,rgba(91,61,240,0.03),transparent);padding:18px;border-radius:12px}
+    /* pricing */
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+    .price-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(107,76,255,0.06)}
+    /* contact */
     .contact-form input, .contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #eaeaf6;margin-bottom:8px}
-    footer{margin-top:32px;text-align:center;color:#777;padding:18px 0;font-size:14px}
+    footer{margin-top:40px;text-align:center;color:#777;padding:18px 0;font-size:13px}
 
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
-      .two-col{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .sim-grid{grid-template-columns:repeat(2,1fr)}
       .pricing-grid{grid-template-columns:repeat(1,1fr)}
     }
     @media (max-width:560px){
-      .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .sim-grid{grid-template-columns:1fr}
     }
+
+    /* small utilities */
+    .small{font-size:13px;color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
   </style>
 </head>
 <body>
   <div class="wrap">
-
-    <!-- Header -->
+    <!-- header -->
     <header>
       <div class="brand">
-        <img src="assets/MGT SIMS.png" alt="MGT SIMS Logo">
-        <div>
-          <h1>MGT SIMS</h1>
-          <div class="muted" style="font-size:13px">Academic Leader in Management Simulations</div>
-        </div>
+        <img src="assets/MGT SIMS.png" alt="MGT SIMS">
+        <div><h1>MGT SIMS</h1><div class="small">Management Simulations</div></div>
       </div>
 
-      <nav aria-label="Main Navigation">
+      <nav aria-label="main-nav">
         <a href="#home">Home</a>
-        <a href="#about">About Us</a>
+        <a href="#about">About</a>
         <a href="#simulations">Simulations</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
@@ -78,153 +90,148 @@
       </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- hero -->
     <section id="home" class="hero">
-      <div class="card">
-        <h2 style="color:var(--purple-600);margin:0">Interactive Marketing Simulations for Management Education</h2>
-        <p class="muted" style="margin-top:10px">Practice budget allocation, channel strategy and analytics — designed for classrooms, workshops and executive programs.</p>
+      <div class="hero-card">
+        <h2>Practice real marketing decisions with interactive simulations</h2>
+        <p class="muted">MGT SIMS helps students and professionals learn budgeting, channel strategy and analytics through repeatable, data-rich simulations. Export student reports, monitor progress, and grade easily.</p>
 
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <div class="cta-row">
           <button class="btn" onclick="location.href='#simulations'">View Simulations</button>
           <button class="btn ghost" onclick="location.href='#pricing'">Pricing & Access</button>
         </div>
 
-        <div class="muted" style="margin-top:16px">
-          <strong>Instructor-ready:</strong> export CSV, download student PDF reports, and track progress with the instructor dashboard.
+        <div class="metrics" aria-hidden>
+          <div class="metric">5 Rounds</div>
+          <div class="metric">Per-user Pricing</div>
+          <div class="metric">PDF & CSV Export</div>
         </div>
+
+        <div style="margin-top:16px" class="small muted">Trusted by educators — designed for classroom & executive use.</div>
       </div>
 
-      <aside class="card" style="background:linear-gradient(180deg, rgba(91,61,240,0.06), transparent);">
-        <h4 style="margin:0;color:var(--purple-600)">Featured Simulation</h4>
-        <p class="muted" style="margin-top:8px">Digital Campaign Manager — 5 rounds, channel-level analytics, downloadable PDF reports.</p>
-
-        <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
-          <div style="width:64px;height:64px;border-radius:8px;background:var(--purple-400);display:flex;align-items:center;justify-content:center;color:#3a2671;font-weight:800">DM</div>
-          <div>
-            <div style="font-weight:700">Digital Campaign Manager</div>
-            <div class="muted" style="font-size:13px">Marketing / Segmentation</div>
-          </div>
-        </div>
-
-        <div style="margin-top:14px">
-          <a class="btn" href="https://reachjanarthanan.github.io/mgt-sims-simulation/" target="_blank" rel="noopener">Open Simulation</a>
+      <aside class="card center" style="flex-direction:column;gap:12px">
+        <!-- Replace with illustrative image if you have one -->
+        <div style="width:100%;height:220px;border-radius:12px;background:linear-gradient(135deg,var(--purple-400),#fff);display:flex;align-items:center;justify-content:center;color:#340b6f;font-weight:800;font-size:32px">MGT SIMS</div>
+        <div style="width:100%;text-align:left">
+          <div style="font-weight:700">Featured: Digital Campaign Manager</div>
+          <div class="small muted" style="margin-top:6px">Five rounds. Channel-level analytics. PDF & instructor reporting.</div>
+          <div style="margin-top:12px"><a class="btn" href="https://reachjanarthanan.github.io/mgt-sims-simulation/" target="_blank">Open Simulation</a></div>
         </div>
       </aside>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section two-col">
-      <div class="card">
-        <h3 style="color:var(--purple-600)">About MGT SIMS</h3>
-        <p class="muted">MGT SIMS builds interactive simulations for business education. Our modules let students practice decision-making in realistic scenarios and produce reports instructors can use for assessment.</p>
-
-        <ul style="margin-top:12px;color:var(--muted)">
-          <li>Multi-round experiential simulations</li>
-          <li>Per-user licensing and institutional plans</li>
-          <li>Instructor dashboard & CSV export (Firestore)</li>
-          <li>PDF & certificate exports for students</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h4 style="margin:0;color:var(--purple-600)">Why simulations?</h4>
-        <p class="muted" style="margin-top:8px">Simulations accelerate learning by doing — they improve analytical thinking, budgeting, and strategic judgement without real-world costs.</p>
-        <div style="margin-top:12px"><button class="btn ghost" onclick="location.href='#contact'">Request Demo</button></div>
+    <!-- how it works -->
+    <section id="about" class="section">
+      <h3 style="color:var(--purple-600)">How it works</h3>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card">
+          <h4>1. Decide budgets</h4>
+          <p class="muted">Allocate budgets across Google, Social, Email and Influencer channels.</p>
+        </div>
+        <div class="card">
+          <h4>2. Run rounds</h4>
+          <p class="muted">Simulate 5 rounds and observe performance, revenue and ROI.</p>
+        </div>
+        <div class="card">
+          <h4>3. Export & assess</h4>
+          <p class="muted">Download PDF reports and CSV for instructor assessment.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SIMULATIONS -->
+    <!-- simulations list -->
     <section id="simulations" class="section">
       <h3 style="color:var(--purple-600)">Simulations</h3>
-      <div class="grid">
-        <div class="card">
-          <h3>Digital Campaign Manager</h3>
-          <p class="muted">Budget allocation across Google, Social, Email and Influencer channels. 5 rounds, reporting & PDF export.</p>
-          <div style="margin-top:12px"><a class="btn" href="https://reachjanarthanan.github.io/mgt-sims-simulation/" target="_blank" rel="noopener">Open</a></div>
+      <div class="sim-grid" style="margin-top:12px">
+        <div class="sim-card">
+          <h4>Digital Campaign Manager</h4>
+          <p class="muted">Allocate budgets, optimize ROI across channels. Active.</p>
+          <div style="margin-top:10px"><a class="btn" href="https://reachjanarthanan.github.io/mgt-sims-simulation/" target="_blank">Launch</a></div>
         </div>
 
-        <div class="card">
-          <h3>Marketing & Segmentation</h3>
-          <p class="muted">Segment targeting decisions and campaign personalization exercises. (Coming soon)</p>
-          <div style="margin-top:12px"><button class="btn ghost" disabled>Coming Soon</button></div>
+        <div class="sim-card">
+          <h4>Marketing & Segmentation</h4>
+          <p class="muted">Segment targeting decisions — coming soon.</p>
+          <div style="margin-top:10px"><button class="btn ghost" disabled>Coming Soon</button></div>
         </div>
 
-        <div class="card">
-          <h3>Brand Management</h3>
-          <p class="muted">Long-term brand-building simulation that focuses on positioning and customer perceptions. (Coming soon)</p>
-          <div style="margin-top:12px"><button class="btn ghost" disabled>Coming Soon</button></div>
+        <div class="sim-card">
+          <h4>Brand Management</h4>
+          <p class="muted">Long-term brand planning — coming soon.</p>
+          <div style="margin-top:10px"><button class="btn ghost" disabled>Coming Soon</button></div>
         </div>
       </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- testimonials & instructors -->
+    <section class="section">
+      <div style="display:flex;gap:18px;align-items:flex-start">
+        <div style="flex:1" >
+          <h3 style="color:var(--purple-600)">What educators say</h3>
+          <div style="margin-top:12px" id="testimonials">
+            <div class="testimonial card">“Excellent hands-on simulation — my students improved their budgeting skills.” — Prof. A.</div>
+            <div class="testimonial card" style="margin-top:10px">“Simple to run and great export options for grading.” — Lecturer B.</div>
+          </div>
+        </div>
+
+        <div style="width:360px" class="card">
+          <h4 style="margin:0;color:var(--purple-600)">Instructor Tools</h4>
+          <p class="muted" style="margin-top:6px">Instructor dashboard, CSV export, student tracking — available with institutional license.</p>
+          <div style="margin-top:12px"><button class="btn ghost" onclick="location.href='#contact'">Request demo</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- pricing -->
     <section id="pricing" class="section">
-      <h3 style="color:var(--purple-600)">Pricing (Indian market)</h3>
-      <p class="muted">Per-user licensing (choose the plan that best fits your program).</p>
-
-      <div class="pricing-grid" style="margin-top:14px">
+      <h3 style="color:var(--purple-600)">Pricing</h3>
+      <p class="muted">Per-user licensing — choose the plan that fits your class or organization.</p>
+      <div class="pricing-grid">
         <div class="price-card">
-          <h4 style="color:var(--purple-600)">Academic (Per learner)</h4>
-          <p class="muted">Per participant license for semester use</p>
+          <h4 style="color:var(--purple-600)">Academic</h4>
           <div style="font-size:22px;font-weight:700;margin-top:10px">₹350 / learner</div>
-          <ul style="margin-top:12px;color:var(--muted)">
-            <li>5 rounds per student</li>
-            <li>PDF report & individual CSV</li>
-            <li>Instructor CSV export (per class)</li>
-          </ul>
+          <p class="muted" style="margin-top:10px">Semester license, PDFs, CSV export.</p>
         </div>
-
         <div class="price-card">
-          <h4 style="color:var(--purple-600)">Institutional (Batch)</h4>
-          <p class="muted">License for up to 60 learners</p>
-          <div style="font-size:22px;font-weight:700;margin-top:10px">₹20,000 / batch</div>
-          <ul style="margin-top:12px;color:var(--muted)">
-            <li>Instructor dashboard</li>
-            <li>CSV export & priority support</li>
-            <li>Optional customization (paid)</li>
-          </ul>
+          <h4 style="color:var(--purple-600)">Institutional</h4>
+          <div style="font-size:22px;font-weight:700;margin-top:10px">₹20,000 / batch (up to 60)</div>
+          <p class="muted" style="margin-top:10px">Instructor dashboard, priority support.</p>
         </div>
-
         <div class="price-card">
-          <h4 style="color:var(--purple-600)">Enterprise / Corporate</h4>
-          <p class="muted">Per participant for corporate training</p>
+          <h4 style="color:var(--purple-600)">Enterprise</h4>
           <div style="font-size:22px;font-weight:700;margin-top:10px">₹1,800 / participant</div>
-          <ul style="margin-top:12px;color:var(--muted)">
-            <li>Custom branding & scenarios</li>
-            <li>Certificates & facilitator guide</li>
-            <li>Dedicated support</li>
-          </ul>
+          <p class="muted" style="margin-top:10px">Custom scenarios, branding & reports.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- contact -->
     <section id="contact" class="section">
-      <h3 style="color:var(--purple-600)">Contact Us</h3>
-      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:14px">
+      <h3 style="color:var(--purple-600)">Contact</h3>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
         <div class="card contact-form">
-          <input id="cf_name" placeholder="Your name" />
-          <input id="cf_email" placeholder="Email" />
-          <input id="cf_mobile" placeholder="Mobile number" />
-          <textarea id="cf_message" placeholder="Your message"></textarea>
+          <input id="cf_name" placeholder="Your name">
+          <input id="cf_email" placeholder="Email">
+          <input id="cf_mobile" placeholder="Mobile number">
+          <textarea id="cf_message" placeholder="Message"></textarea>
           <div style="display:flex;gap:10px;align-items:center">
-            <button id="cf_send" class="btn">Send Message</button>
+            <button id="cf_send" class="btn">Send</button>
             <div id="cf_status" class="muted" style="margin-left:8px"></div>
           </div>
         </div>
 
         <div class="card">
-          <h4>Get in touch</h4>
-          <p class="muted" style="margin-top:8px">Email: <strong>reachjanarthanan@gmail.com</strong><br/>Location: India</p>
-          <hr/>
-          <h5>Support</h5>
-          <p class="muted">For demo access or instructor dashboard setup, contact us and we'll schedule a walkthrough.</p>
+          <h4>Contact details</h4>
+          <p class="muted">Email: <strong>reachjanarthanan@gmail.com</strong><br/>Location: India</p>
+          <hr>
+          <p class="muted">For instructor dashboard or institutional licensing please contact us.</p>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="muted">© 2025 MGT SIMS — Built with care for management educators</div>
+    <footer class="section">
+      <div class="muted">© 2025 MGT SIMS — Management Simulations for Education</div>
     </footer>
   </div>
 
