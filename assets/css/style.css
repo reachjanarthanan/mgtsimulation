@@ -1,64 +1,9 @@
-/* Corporate clean styles for MGTSIM */
-:root{
-  --accent:#0b6cff;
-  --muted:#677185;
-  --radius:10px;
-  --container:1100px;
-}
-*{box-sizing:border-box}
-body{font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;margin:0;color:#12202b;background:#fff}
-.container{width:90%;max-width:var(--container);margin:0 auto;padding:40px 0}
-.site-header{border-bottom:1px solid #eef2f7;background:#fff;position:sticky;top:0;z-index:40}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{font-weight:700;color:var(--accent);font-size:20px}
-.nav{display:flex;gap:18px;align-items:center}
-.nav-link{color:#22313f;text-decoration:none;font-weight:600}
-.btn{padding:10px 16px;border-radius:8px;border:1px solid transparent;text-decoration:none;display:inline-block;font-weight:600}
-.btn-primary{background:linear-gradient(90deg,var(--accent),#0066ff);color:#fff}
-.btn-outline{background:transparent;border:1px solid #d7e6ff;color:var(--accent)}
-.nav-toggle{display:none;background:transparent;border:0;font-size:22px}
 
-/* HERO */
-.hero{background:linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);padding:60px 0}
-.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:center}
-.hero-copy h1{font-size:34px;margin:0 0 14px;color:#0e1720}
-.hero-copy p{color:var(--muted);margin:0 0 20px}
-.hero-ctas{display:flex;gap:12px;margin-top:8px}
-.trust-list{margin-top:18px;color:var(--muted);list-style:none;padding:0}
-.hero-media{display:flex;justify-content:center;align-items:center}
-
-/* FEATURES */
-.features h2{margin-top:0}
-.cards{display:flex;gap:18px;margin-top:18px}
-.card{background:#fff;border:1px solid #eef4ff;padding:18px;border-radius:12px;flex:1;min-height:120px}
-
-/* Simulations preview */
-.sim-grid{display:flex;gap:18px;margin-top:18px}
-.sim-card{background:#fbfdff;border:1px solid #eef4ff;padding:18px;border-radius:12px;flex:1}
-.clients{padding-top:20px}
-.clients-row{display:flex;gap:12px;align-items:center}
-.client{background:#f4f8ff;padding:12px 18px;border-radius:8px;border:1px solid #eef4ff}
-
-/* CTA form */
-.cta{margin:40px 0;padding:28px;border-radius:12px;background:#f8fbff;border:1px solid #eaf4ff}
-.cta-inner{display:flex;gap:24px;align-items:center;justify-content:space-between}
-.cta-form{width:420px;background:#fff;padding:12px;border-radius:10px;border:1px solid #eef4ff}
-.cta-form label{display:block;margin-bottom:8px;font-size:14px;color:#22313f}
-.cta-form input, .cta-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px}
-
-/* Footer */
-.site-footer{border-top:1px solid #eef2f7;padding:28px 0;margin-top:40px;background:#fff}
-.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
-.footer-left p{margin:8px 0;color:var(--muted)}
-.footer-right nav a{display:block;color:#22313f;text-decoration:none;margin-bottom:8px}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr; padding-bottom:0}
-  .sim-grid{flex-direction:column}
-  .cards{flex-direction:column}
-  .cta-inner{flex-direction:column}
-  .nav{display:none}
-  .nav-toggle{display:block}
-  .header-inner{gap:10px}
-}
+body { font-family: Arial; margin:0; padding:0; }
+.container { width:90%; margin:auto; padding:20px; }
+.site-header { background:#fff; border-bottom:1px solid #ddd; padding:10px 0; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; }
+.logo { height:60px; }
+.nav a { margin:0 10px; text-decoration:none; color:#333; font-weight:bold; }
+.btn { display:inline-block; padding:10px 20px; background:#6a1b9a; color:#fff; border-radius:6px; text-decoration:none; }
+.sim-card { padding:20px; border:1px solid #ddd; margin-top:20px; border-radius:8px; }
